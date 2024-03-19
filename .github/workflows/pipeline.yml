@@ -17,6 +17,7 @@ jobs:
       id: test
       run: |
         dotnet fsi test_env.fsx
+    - run: |
         echo $SCRIPT_OUTPUT
         echo "out=$SCRIPT_OUTPUT" >> $GITHUB_OUTPUT
 
