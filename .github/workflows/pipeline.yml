@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     outputs: 
-      out: ${{ steps.set_out.outputs.SCRIPT_OUTPUT }}
+      out: ${{ steps.set_out.outputs.out }}
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
