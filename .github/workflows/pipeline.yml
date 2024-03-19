@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     outputs: 
-      out: ${{ steps.test.outputs.out }}
+      out: ${{ steps.set_out.outputs.SCRIPT_OUTPUT }}
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -17,7 +17,9 @@ jobs:
       id: test
       run: |
         dotnet fsi test_env.fsx
-    - run: |
+    - name: set output
+      id: set_out
+      run: |
         echo $SCRIPT_OUTPUT
         echo "out=$SCRIPT_OUTPUT" >> $GITHUB_OUTPUT
 
