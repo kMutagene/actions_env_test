@@ -27,4 +27,4 @@ jobs:
     steps:
     - name: print
       run: |
-        echo {{ needs.test.outputs.out}}
+        echo ${{ needs.test.outputs.out}}
